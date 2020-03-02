@@ -1,11 +1,17 @@
 package com.training.spring.service;
 
 import com.training.spring.model.Caller;
+import com.training.spring.repository.CallerRepository;
 
 public class CallerService {
 
+    private static CallerService instance = new CallerService();
+
     public Caller getCallerByPhone(final String phone) {
-        // FIXME Invoke method repository here.
-        return null;
+        return CallerRepository.getInstance().getCallerByPhone(phone);
+    }
+
+    public static CallerService getInstance() {
+        return instance;
     }
 }

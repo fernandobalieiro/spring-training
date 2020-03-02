@@ -9,6 +9,9 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class CallLogRepository {
+
+    private static CallLogRepository instance = new CallLogRepository();
+
     private Map<String, CallLog> callLogs = new HashMap<>();
 
     public CallLogRepository() {
@@ -33,5 +36,9 @@ public class CallLogRepository {
                     this.callLogs.put(phone, callLog);
                 }
         );
+    }
+
+    public static CallLogRepository getInstance() {
+        return instance;
     }
 }
