@@ -1,18 +1,35 @@
 package com.training.spring;
 
+import com.training.spring.model.CallLog;
+import com.training.spring.model.Caller;
+import com.training.spring.service.CallLogService;
+import com.training.spring.service.CallerService;
+
+import java.util.Scanner;
+
 public class SpringTraining {
 
-	public static void main(String[] args) {
-		String phone = "";
+    public static void main(String[] args) {
+        CallerService callerService = CallerService.getInstance();
+        CallLogService callLogService = CallLogService.getInstance();
 
-		if (args.length > 0) {
-			phone = args[0];
-		} else {
-			System.out.println("Fist argument must be a phone number.");
+        // A valid phone number to try out: +35199999991
 
-			System.exit(1);
-		}
+        Scanner in = new Scanner(System.in);
 
-		// TODO Retrieve call information by phone using Services classes.
-	}
+        while (true) {
+            System.out.print("Enter phone Number: ");
+            String phone = in.nextLine();
+
+            if (phone == null || phone.length() == 0) {
+                System.out.println("Phone number cannot be blank.\n");
+                continue;
+            }
+
+            Caller caller = callerService.getCallerByPhone(phone);
+            CallLog callLog = callLogService.getCallLogByPhone(phone);
+
+            CallLogService.getInstance().printCallInformation(caller, callLog);
+        }
+    }
 }

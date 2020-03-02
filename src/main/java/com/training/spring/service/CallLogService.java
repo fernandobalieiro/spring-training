@@ -2,17 +2,30 @@ package com.training.spring.service;
 
 import com.training.spring.model.CallLog;
 import com.training.spring.model.Caller;
+import com.training.spring.repository.CallLogRepository;
 
 public class CallLogService {
 
+    private static CallLogService instance = null;
+
     public CallLog getCallLogByPhone(final String phone) {
-        // FIXME Invoke method repository here.
-        return null;
+        return CallLogRepository.getInstance().getCallLogByPhone(phone);
     }
 
     public void printCallInformation(final Caller caller, final CallLog callLog) {
-        System.out.println("Call Log Information:");
-        System.out.println("Caller: " + caller);
-        System.out.println("Call Log: " + callLog);
+        if (caller == null && callLog == null) {
+            System.out.println("Error: Call Information not found.\n");
+        } else {
+            System.out.println("Call Log Information:");
+            System.out.println("Caller: " + caller);
+            System.out.println("Call Log: " + callLog + "\n");
+        }
+    }
+
+    public static CallLogService getInstance() {
+        if (instance == null) {
+            instance = new CallLogService();
+        }
+        return instance;
     }
 }

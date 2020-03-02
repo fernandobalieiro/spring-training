@@ -9,6 +9,8 @@ import java.util.stream.IntStream;
 
 public class CallerRepository {
 
+    private static CallerRepository instance = null;
+
     private Map<String, Caller> callers = new HashMap<>();
 
     public CallerRepository() {
@@ -30,5 +32,12 @@ public class CallerRepository {
                     this.callers.put(phone, caller);
                 }
         );
+    }
+
+    public static CallerRepository getInstance() {
+        if (instance == null) {
+            instance = new CallerRepository();
+        }
+        return instance;
     }
 }
