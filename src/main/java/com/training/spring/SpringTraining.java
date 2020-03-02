@@ -1,5 +1,10 @@
 package com.training.spring;
 
+import com.training.spring.model.CallLog;
+import com.training.spring.model.Caller;
+import com.training.spring.service.CallLogService;
+import com.training.spring.service.CallerService;
+
 public class SpringTraining {
 
 	public static void main(String[] args) {
@@ -13,6 +18,9 @@ public class SpringTraining {
 			System.exit(1);
 		}
 
-		// TODO Retrieve call information by phone using Services classes.
+		Caller caller = CallerService.getInstance().getCallerByPhone(phone);
+		CallLog callLog = CallLogService.getInstance().getCallLogByPhone(phone);
+
+		CallLogService.getInstance().printCallInformation(caller, callLog);
 	}
 }
