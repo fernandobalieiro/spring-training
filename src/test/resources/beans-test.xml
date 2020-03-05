@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="callerRepository" class="com.training.spring.repository.CallerRepository"/>
+    <bean id="callLogRepository" class="com.training.spring.repository.CallLogRepository"/>
+    <bean id="callerService" class="com.training.spring.service.CallerService">
+        <constructor-arg ref="callerRepository"/>
+    </bean>
+    <bean id="callLogService" class="com.training.spring.service.CallLogService">
+        <constructor-arg ref="callLogRepository"/>
+    </bean>
+</beans>

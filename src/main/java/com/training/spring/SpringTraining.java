@@ -22,9 +22,9 @@ public class SpringTraining {
             String phone = in.nextLine();
 
             if (phone == null || phone.length() == 0) {
-				System.out.println("Phone number cannot be blank.\n");
-            	continue;
-			}
+                System.out.println("Phone number cannot be blank.\n");
+                continue;
+            }
 
             CallerService callerService = ctx.getBean(CallerService.class);
             CallLogService callLogService = ctx.getBean(CallLogService.class);
