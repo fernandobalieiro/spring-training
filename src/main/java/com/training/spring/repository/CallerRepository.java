@@ -17,6 +17,7 @@ public class CallerRepository {
         createCallers();
     }
 
+    // FIXME Missing annotation
     public Caller getCallerByPhone(final String phone) {
         return this.callers.get(phone);
     }

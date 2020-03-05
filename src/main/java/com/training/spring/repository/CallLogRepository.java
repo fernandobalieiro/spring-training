@@ -18,6 +18,7 @@ public class CallLogRepository {
         createCallLogs();
     }
 
+    // FIXME Missing annotation
     public CallLog getCallLogByPhone(final String phone) {
         return this.callLogs.get(phone);
     }
