@@ -1,5 +1,6 @@
 package com.training.spring.repository;
 
+import com.training.spring.annotation.LogExecutionTime;
 import com.training.spring.model.CallLog;
 import org.springframework.stereotype.Component;
 
@@ -18,10 +19,12 @@ public class CallLogRepository {
         createCallLogs();
     }
 
+    @LogExecutionTime
     public CallLog getCallLogByPhone(final String phone) {
         return this.callLogs.get(phone);
     }
 
+    @LogExecutionTime
     private void createCallLogs() {
         Random random = new Random();
 

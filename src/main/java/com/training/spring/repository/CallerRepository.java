@@ -1,5 +1,6 @@
 package com.training.spring.repository;
 
+import com.training.spring.annotation.LogExecutionTime;
 import com.training.spring.model.Caller;
 import org.springframework.stereotype.Component;
 
@@ -17,10 +18,12 @@ public class CallerRepository {
         createCallers();
     }
 
+    @LogExecutionTime
     public Caller getCallerByPhone(final String phone) {
         return this.callers.get(phone);
     }
 
+    @LogExecutionTime
     private void createCallers() {
         IntStream.range(0, 10).forEach(i -> {
                     Caller caller = new Caller();
