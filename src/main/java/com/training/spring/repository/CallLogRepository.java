@@ -1,7 +1,6 @@
 package com.training.spring.repository;
 
 import com.training.spring.model.CallLog;
-import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -9,7 +8,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-@Component // @Repository
+// FIXME
 public class CallLogRepository {
 
     private Map<String, CallLog> callLogs = new HashMap<>();

@@ -1,14 +1,13 @@
 package com.training.spring.repository;
 
 import com.training.spring.model.Caller;
-import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
 
-@Component // @Repository
+// FIXME
 public class CallerRepository {
 
     private Map<String, Caller> callers = new HashMap<>();
