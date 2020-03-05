@@ -4,21 +4,18 @@ import com.training.spring.model.CallLog;
 import com.training.spring.model.Caller;
 import com.training.spring.service.CallLogService;
 import com.training.spring.service.CallerService;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import java.util.Scanner;
 
+@SpringBootApplication
 public class SpringTraining {
 
     public static void main(String[] args) {
 
-        //Method 1
-//        ApplicationContext ctx = new AnnotationConfigApplicationContext("com.training.spring");
-
-//        //Method 2
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        ctx.register(AppConfig.class);
-        ctx.refresh();
+        ApplicationContext ctx = SpringApplication.run(SpringTraining.class);
 
         Scanner in = new Scanner(System.in);
 
