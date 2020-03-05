@@ -5,13 +5,13 @@ import com.training.spring.repository.CallerRepository;
 
 public class CallerService {
 
-    private static CallerService instance = new CallerService();
+    private CallerRepository callerRepository;
 
-    public Caller getCallerByPhone(final String phone) {
-        return CallerRepository.getInstance().getCallerByPhone(phone);
+    public CallerService(CallerRepository callerRepository) {
+        this.callerRepository = callerRepository;
     }
 
-    public static CallerService getInstance() {
-        return instance;
+    public Caller getCallerByPhone(final String phone) {
+        return callerRepository.getCallerByPhone(phone);
     }
 }

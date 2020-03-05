@@ -6,19 +6,19 @@ import com.training.spring.repository.CallLogRepository;
 
 public class CallLogService {
 
-    private static CallLogService instance = new CallLogService();
+    private CallLogRepository callLogRepository;
+
+    public CallLogService(CallLogRepository callLogRepository) {
+        this.callLogRepository = callLogRepository;
+    }
 
     public CallLog getCallLogByPhone(final String phone) {
-        return CallLogRepository.getInstance().getCallLogByPhone(phone);
+        return callLogRepository.getCallLogByPhone(phone);
     }
 
     public void printCallInformation(final Caller caller, final CallLog callLog) {
         System.out.println("Call Log Information:");
         System.out.println("Caller: " + caller);
         System.out.println("Call Log: " + callLog);
-    }
-
-    public static CallLogService getInstance() {
-        return instance;
     }
 }
