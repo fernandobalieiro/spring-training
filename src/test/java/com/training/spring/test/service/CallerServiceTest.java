@@ -1,20 +1,19 @@
 package com.training.spring.test.service;
 
+import com.training.spring.AppConfig;
 import com.training.spring.model.Caller;
 import com.training.spring.service.CallerService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(locations = "classpath:beans-test.xml")
+@ContextConfiguration(classes = AppConfig.class)
 public class CallerServiceTest {
 
-    @Autowired
     private CallerService callerService;
 
     @Test

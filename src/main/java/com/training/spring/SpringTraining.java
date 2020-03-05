@@ -4,8 +4,7 @@ import com.training.spring.model.CallLog;
 import com.training.spring.model.Caller;
 import com.training.spring.service.CallLogService;
 import com.training.spring.service.CallerService;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Scanner;
 
@@ -13,7 +12,18 @@ public class SpringTraining {
 
     public static void main(String[] args) {
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
+        //Method 1
+//        ApplicationContext ctx = new AnnotationConfigApplicationContext("com.training.spring");
+
+//        //Method 2
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+        ctx.register(AppConfig.class);
+        ctx.refresh();
+
+        CallerService callerService = ctx.getBean(CallerService.class);
+        CallLogService callLogService = ctx.getBean(CallLogService.class);
+
+        // A valid phone number to try out: +35199999991
 
         Scanner in = new Scanner(System.in);
 
@@ -25,9 +35,6 @@ public class SpringTraining {
                 System.out.println("Phone number cannot be blank.\n");
                 continue;
             }
-
-            CallerService callerService = ctx.getBean(CallerService.class);
-            CallLogService callLogService = ctx.getBean(CallLogService.class);
 
             Caller caller = callerService.getCallerByPhone(phone);
             CallLog callLog = callLogService.getCallLogByPhone(phone);
