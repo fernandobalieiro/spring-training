@@ -2,7 +2,9 @@ package com.training.spring.service;
 
 import com.training.spring.model.Caller;
 import com.training.spring.repository.CallerRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CallerService {
 
     private CallerRepository callerRepository;
