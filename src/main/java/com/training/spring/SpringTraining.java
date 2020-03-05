@@ -4,21 +4,28 @@ import com.training.spring.model.CallLog;
 import com.training.spring.model.Caller;
 import com.training.spring.service.CallLogService;
 import com.training.spring.service.CallerService;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 import java.util.Scanner;
 
+import static org.springframework.boot.Banner.Mode.OFF;
+
+@SpringBootApplication
 public class SpringTraining {
 
+    private static CallLogService callLogService;
+    private static CallerService callerService;
+
+    public SpringTraining(CallLogService callLogService, CallerService callerService) {
+        SpringTraining.callLogService = callLogService;
+        SpringTraining.callerService = callerService;
+    }
+
     public static void main(String[] args) {
+        new SpringApplicationBuilder(SpringTraining.class).bannerMode(OFF).logStartupInfo(false).run(args);
 
-        //Method 1
-//        ApplicationContext ctx = new AnnotationConfigApplicationContext("com.training.spring");
-
-//        //Method 2
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        ctx.register(AppConfig.class);
-        ctx.refresh();
+        // A valid phone number to try out: +35199999991
 
         Scanner in = new Scanner(System.in);
 
@@ -30,9 +37,6 @@ public class SpringTraining {
                 System.out.println("Phone number cannot be blank.\n");
                 continue;
             }
-
-            CallerService callerService = ctx.getBean(CallerService.class);
-            CallLogService callLogService = ctx.getBean(CallLogService.class);
 
             Caller caller = callerService.getCallerByPhone(phone);
             CallLog callLog = callLogService.getCallLogByPhone(phone);
