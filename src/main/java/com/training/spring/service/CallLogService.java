@@ -3,11 +3,15 @@ package com.training.spring.service;
 import com.training.spring.model.CallLog;
 import com.training.spring.model.Caller;
 import com.training.spring.repository.CallLogRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CallLogService {
 
     private CallLogRepository callLogRepository;
 
+    @Autowired
     public CallLogService(CallLogRepository callLogRepository) {
         this.callLogRepository = callLogRepository;
     }

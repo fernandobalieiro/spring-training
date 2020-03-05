@@ -4,8 +4,7 @@ import com.training.spring.model.CallLog;
 import com.training.spring.model.Caller;
 import com.training.spring.service.CallLogService;
 import com.training.spring.service.CallerService;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Scanner;
 
@@ -13,7 +12,13 @@ public class SpringTraining {
 
     public static void main(String[] args) {
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
+        //Method 1
+//        ApplicationContext ctx = new AnnotationConfigApplicationContext("com.training.spring");
+
+//        //Method 2
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+        ctx.register(AppConfig.class);
+        ctx.refresh();
 
         Scanner in = new Scanner(System.in);
 
