@@ -1,10 +1,12 @@
 package com.training.spring;
 
+import com.training.spring.annotation.AuditInfo;
 import com.training.spring.model.CallLog;
 import com.training.spring.model.Caller;
 import com.training.spring.service.CallLogService;
 import com.training.spring.service.CallerService;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SpringTraining {
@@ -18,10 +20,10 @@ public class SpringTraining {
         // Using Evaluate Expression:
 
         // Print all annotated methods for the given class. CHECK CONSOLE
-//		Arrays.stream(callerService.getClass().getMethods()).forEach(method -> System.out.println(Arrays.toString(method.getAnnotations())));
+		// Arrays.stream(callerService.getClass().getMethods()).forEach(method -> System.out.println(Arrays.toString(method.getAnnotations())));
 
         // Annotation from the method
-//      callerService.getClass().getMethods()[0].getAnnotation(AuditInfo.class)
+        // callerService.getClass().getMethods()[1].getAnnotation(AuditInfo.class);
 
 
         // A valid phone number to try out: +35199999991
