@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.5.RELEASE</version>
+        <version>3.1.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.training</groupId>
@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <spring.version>5.2.4.RELEASE</spring.version>
+        <spring.version>6.0.12</spring.version>
     </properties>
 
     <dependencies>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13</version>
+            <version>4.13.2</version>
         </dependency>
     </dependencies>
 </project>
