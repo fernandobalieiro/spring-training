@@ -29,7 +29,7 @@ public class SpringTraining {
             Caller caller = callerService.getCallerByPhone(phone);
             CallLog callLog = callLogService.getCallLogByPhone(phone);
 
-            CallLogService.getInstance().printCallInformation(caller, callLog);
+            callLogService.printCallInformation(caller, callLog);
         }
     }
 }
