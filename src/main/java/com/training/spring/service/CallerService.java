@@ -4,15 +4,14 @@ import com.training.spring.model.Caller;
 
 public class CallerService {
 
-    public static CallerService callerService = null;
+    private static CallerService instance = null;
+
+    // FIXME Missing dependency.
 
     public Caller getCallerByPhone(final String phone) {
-        // FIXME Invoke method repository here.
-        return null;
+        // FIXME Invoke repository method here.
+        return ;
     }
 
-    public static CallerService getInstance() {
-        //FIXME
-        return callerService;
-    }
+    // TODO Implement missing getInstance Method
 }

@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 
 public class CallLogRepository {
 
-    // FIXME
+    private CallLogRepository instance = null;
 
     private Map<String, CallLog> callLogs = new HashMap<>();
 
@@ -38,5 +38,10 @@ public class CallLogRepository {
         );
     }
 
-    // TODO
+    public CallLogRepository getInstance() {
+        if (instance == null) {
+            instance = new CallLogRepository();
+        }
+        return instance;
+    }
 }

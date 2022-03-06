@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 
 public class CallerRepository {
 
-    // FIXME
+    private static CallerRepository instance = null;
 
     private Map<String, Caller> callers = new HashMap<>();
 
@@ -34,5 +34,10 @@ public class CallerRepository {
         );
     }
 
-    // TODO
+    public CallerRepository getInstance() {
+        if (instance == null) {
+            instance = new CallerRepository();
+        }
+        return instance;
+    }
 }

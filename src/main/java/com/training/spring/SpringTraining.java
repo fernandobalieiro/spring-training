@@ -11,8 +11,8 @@ public class SpringTraining {
 
     public static void main(String[] args) {
         //FIXME
-        CallerService callerService = null; //???
-        CallLogService callLogService = null; //???
+        CallerService callerService = //???
+        CallLogService callLogService = //???
 
         // A valid phone number to try out: +35199999991
 
@@ -27,12 +27,11 @@ public class SpringTraining {
                 continue;
             }
 
-            // TODO Invoke Caller Service and CallLogService classes here
-            //FIXME
-            Caller caller = null; //???
-            CallLog callLog = null; //???
+            // TODO Invoke CallerService and CallLogService methods classes here
+            Caller caller = //???
+            CallLog callLog = //???
 
-            // TODO Print the result using CallLogService#printCallInformation method.
+            // TODO Print the result calling callLogService.printCallInformation() method;
         }
     }
 }

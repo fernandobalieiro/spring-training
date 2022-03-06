@@ -5,11 +5,13 @@ import com.training.spring.model.Caller;
 
 public class CallLogService {
 
-    public static CallLogService callLogService = null;
+    public static CallLogService instance = null;
+
+    // FIXME Missing field.
 
     public CallLog getCallLogByPhone(final String phone) {
-        // FIXME Invoke method repository here.
-        return null;
+        // FIXME Invoke repository method here.
+        return ;
     }
 
     public void printCallInformation(final Caller caller, final CallLog callLog) {
@@ -22,5 +24,5 @@ public class CallLogService {
         }
     }
 
-    // TODO
+    // TODO Implement missing getInstance Method
 }
