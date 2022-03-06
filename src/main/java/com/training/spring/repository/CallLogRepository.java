@@ -10,9 +10,9 @@ import java.util.stream.IntStream;
 
 public class CallLogRepository {
 
-    private static CallLogRepository instance = new CallLogRepository();
+    private static final CallLogRepository instance = new CallLogRepository();
 
-    private Map<String, CallLog> callLogs = new HashMap<>();
+    private final Map<String, CallLog> callLogs = new HashMap<>();
 
     public CallLogRepository() {
         createCallLogs();

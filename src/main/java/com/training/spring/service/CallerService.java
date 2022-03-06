@@ -5,7 +5,7 @@ import com.training.spring.repository.CallerRepository;
 
 public class CallerService {
 
-    private static CallerService instance = new CallerService();
+    private static final CallerService instance = new CallerService();
 
     public Caller getCallerByPhone(final String phone) {
         return CallerRepository.getInstance().getCallerByPhone(phone);

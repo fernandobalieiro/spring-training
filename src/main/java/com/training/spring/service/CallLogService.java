@@ -6,7 +6,7 @@ import com.training.spring.repository.CallLogRepository;
 
 public class CallLogService {
 
-    private static CallLogService instance = new CallLogService();
+    private static final CallLogService instance = new CallLogService();
 
     public CallLog getCallLogByPhone(final String phone) {
         return CallLogRepository.getInstance().getCallLogByPhone(phone);
