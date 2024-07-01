@@ -17,13 +17,13 @@ public class LogExecutionTimeAspect {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        // FIXME You must call the target method here, store the result using ProceedingJoinPoint instance.
+        // FIXME You must invoke the target method here, store the result using ProceedingJoinPoint instance.
         Object proceed = null; // ???
 
         stopWatch.stop();
 
-        String message = MessageFormat.format("\tMethod {0}.{1} executed in {2}ms", joinPoint.getSignature().getDeclaringTypeName(),
-                joinPoint.getSignature().getName(), stopWatch.getTotalTimeMillis());
+        String message = MessageFormat.format("\tMethod {0}.{1} executed in {2}ns", joinPoint.getSignature().getDeclaringTypeName(),
+                joinPoint.getSignature().getName(), stopWatch.getTotalTimeNanos());
 
         System.out.println(message);
 
