@@ -2,23 +2,23 @@ package com.training.spring.test.service;
 
 import com.training.spring.model.Caller;
 import com.training.spring.service.CallerService;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = "classpath:beans-test.xml")
-public class CallerServiceTest {
+class CallerServiceTest {
 
     @Autowired
     private CallerService callerService;
 
     @Test
-    public void test() {
+    void test() {
         Caller caller = callerService.getCallerByPhone("+35199999991");
         assertEquals("+35199999991", caller.getPhone());
     }

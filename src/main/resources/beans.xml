@@ -6,5 +6,6 @@
 
     <bean id="callerRepository" class="com.training.spring.repository.CallerRepository"/>
 
+    <!-- IoC (Inversion of Control) through CDI (Contexts and Dependency Injection) -->
     <!-- FIXME Create remaining beans -->
 </beans>
