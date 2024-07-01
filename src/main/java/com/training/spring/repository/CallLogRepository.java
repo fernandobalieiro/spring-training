@@ -14,7 +14,7 @@ public class CallLogRepository {
 
     private final Map<String, CallLog> callLogs = new HashMap<>();
 
-    public CallLogRepository() {
+    private CallLogRepository() {
         createCallLogs();
     }
 

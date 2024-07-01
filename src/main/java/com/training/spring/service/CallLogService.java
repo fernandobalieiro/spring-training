@@ -8,6 +8,9 @@ public class CallLogService {
 
     private static final CallLogService instance = new CallLogService();
 
+    private CallLogService() {
+    }
+
     public CallLog getCallLogByPhone(final String phone) {
         return CallLogRepository.getInstance().getCallLogByPhone(phone);
     }

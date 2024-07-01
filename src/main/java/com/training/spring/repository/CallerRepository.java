@@ -13,7 +13,7 @@ public class CallerRepository {
 
     private final Map<String, Caller> callers = new HashMap<>();
 
-    public CallerRepository() {
+    private CallerRepository() {
         createCallers();
     }
 
