@@ -12,6 +12,7 @@ public class SpringTraining {
 
     public static void main(String[] args) {
 
+        // IoC (Inversion of Control) through CDI (Contexts and Dependency Injection) using annotations
         //Method 1
 //        ApplicationContext ctx = new AnnotationConfigApplicationContext("com.training.spring");
 
