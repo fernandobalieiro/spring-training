@@ -2,14 +2,14 @@ package com.training.spring.test.service;
 
 import com.training.spring.model.CallLog;
 import com.training.spring.service.CallLogService;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CallLogServiceTest {
+class CallLogServiceTest {
 
     @Test
-    public void test() {
+    void test() {
         CallLog callLog = CallLogService.getInstance().getCallLogByPhone("+35199999991");
         assertEquals("+35199999991", callLog.getSource());
     }
