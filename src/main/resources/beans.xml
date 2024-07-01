@@ -8,6 +8,7 @@
 
     <bean id="callLogRepository" class="com.training.spring.repository.CallLogRepository"/>
 
+    <!-- IoC (Inversion of Control) through CDI (Contexts and Dependency Injection) -->
     <bean id="callerService" class="com.training.spring.service.CallerService">
         <constructor-arg ref="callerRepository"/>
     </bean>
